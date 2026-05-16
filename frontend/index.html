@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Invoice Automation</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>AI Invoice Automation System</h1>
+
+        <textarea
+            id="invoiceText"
+            placeholder="Paste invoice text here..."
+        ></textarea>
+
+        <button onclick="extractInvoice()">
+            Extract Invoice
+        </button>
+
+        <div id="result"></div>
+
+        <h2>Saved Invoices</h2>
+
+        <button onclick="loadInvoices()">
+            Load Invoices
+        </button>
+
+        <div id="invoiceList"></div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
