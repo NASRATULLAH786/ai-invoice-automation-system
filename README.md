@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # AI Invoice Automation System
 
 A full-stack AI-powered invoice automation platform built using FastAPI, JavaScript, SQLite, and intelligent invoice extraction workflows.
@@ -183,3 +184,6 @@ in your browser.
 # Author
 
 Nasratullah Mirzai
+=======
+# ai-invoice-automation-system
+>>>>>>> 7de37d952a5e02465b0f4187579eef6e46a513f8
