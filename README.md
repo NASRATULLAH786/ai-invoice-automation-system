@@ -1,115 +1,211 @@
-
----
-
-# 3. AI INVOICE AUTOMATION SYSTEM README
-
-```md
 # AI Invoice Automation System
+
+![Python](https://img.shields.io/badge/Python-3.13-blue)
+![FastAPI](https://img.shields.io/badge/FastAPI-Backend-green)
+![SQLite](https://img.shields.io/badge/SQLite-Database-lightgrey)
+![AI Automation](https://img.shields.io/badge/AI-Automation-orange)
+![Groq](https://img.shields.io/badge/Groq-LLM-orange)
 
 ## Overview
 
-The AI Invoice Automation System is an intelligent document processing and workflow automation platform designed to automate invoice extraction, validation, and operational processing workflows.
+AI Invoice Automation System is a practical AI-powered workflow automation project that extracts structured invoice information from raw invoice text and stores the result in a database.
 
-The system demonstrates practical implementation of AI-powered automation for business operations.
-
----
+The system includes:
+- FastAPI backend
+- Modern frontend dashboard
+- Invoice extraction workflow
+- Database integration
+- API documentation
+- Invoice history tracking
 
 ## Problem Statement
 
-Manual invoice processing is time-consuming, error-prone, and operationally inefficient.
+Manual invoice processing is time-consuming, repetitive, and error-prone. Businesses often manually extract invoice numbers, company names, dates, and total amounts from invoices.
 
-Organizations require scalable automation systems to improve invoice processing speed and reduce manual effort.
-
----
+This project automates invoice extraction and stores structured invoice records for operational workflows.
 
 ## Solution
 
-The platform automates invoice extraction, validation, processing, and workflow handling using AI-powered operational automation.
-
----
+The platform allows users to:
+- paste invoice text
+- extract structured invoice information
+- save invoice records
+- view invoice history
+- interact with APIs through Swagger documentation
 
 ## Key Features
 
-- Automated invoice processing
-- AI-powered information extraction
-- Workflow automation
-- Database integration
-- Validation systems
+- Invoice data extraction
+- FastAPI backend
+- Modern responsive frontend
+- SQLite database storage
+- Invoice history table
+- REST API endpoints
+- Swagger API documentation
 - Error handling
-- Backend operational workflows
-
----
+- Portfolio-ready structure
 
 ## Technologies Used
 
 - Python
-- OCR tools (if used)
-- OpenAI API
-- REST APIs
-- PostgreSQL / MongoDB
-- Workflow automation systems
+- FastAPI
+- Pydantic
+- SQLAlchemy
+- SQLite
+- HTML
+- CSS
+- JavaScript
+- Uvicorn
+- Groq API
 
----
+## System Workflow
 
-## Workflow
-
-1. Invoice uploaded
-2. System extracts invoice information
-3. AI validates invoice data
-4. Workflow engine processes automation
-5. Information stored in database
-6. Operational actions executed
-
----
+1. User pastes invoice text into dashboard
+2. Frontend sends request to backend API
+3. Backend extracts invoice information
+4. Invoice data is validated and stored
+5. Saved invoices are displayed in dashboard
 
 ## Architecture Diagram
 
-![Architecture](architecture/system-design.png)
+![Architecture Diagram](architecture/system-design.png)
 
-Invoice Upload → Extraction Engine → AI Processing → Workflow Validation → Database → Reporting System
+```text
+Frontend Dashboard
+        ↓
+FastAPI Backend
+        ↓
+Invoice Extraction Engine
+        ↓
+SQLite Database
+        ↓
+Saved Invoice History
+```
 
----
+## API Endpoints
 
-## Technical Challenges
+| Method | Endpoint | Description |
+|---|---|---|
+| GET | `/` | Health check |
+| POST | `/extract-invoice` | Extract invoice data |
+| GET | `/invoices` | Get saved invoices |
 
-- Handling multiple invoice formats
-- OCR processing optimization
-- Workflow validation reliability
-- Error handling and retries
-- Database consistency
+## Example Request
 
----
+```json
+{
+  "invoice_text": "Invoice Number: INV-1001\nCompany: ABC Technologies\nDate: 2026-05-16\nTotal Amount: $450.00"
+}
+```
 
-## Future Improvements
+## Example Response
 
-- ERP integration
-- Fraud detection workflows
-- Analytics dashboard
-- Multi-format support
-- Approval systems
-
----
+```json
+{
+  "message": "Invoice extracted and saved successfully",
+  "invoice": {
+    "id": 1,
+    "company_name": "ABC Technologies",
+    "invoice_number": "INV-1001",
+    "date": "2026-05-16",
+    "total_amount": "450.00"
+  }
+}
+```
 
 ## Screenshots
 
-![Invoice Upload](screenshots/upload.png)
+### Dashboard
 
-![Processing Workflow](screenshots/workflow.png)
+![Dashboard](screenshots/dashboard.png)
 
-![AI Extraction](screenshots/extraction.png)
+### API Documentation
 
----
+![API Docs](screenshots/api-docs.png)
 
 ## Demo Video
 
-[Watch Demo](YOUR_DEMO_LINK)
-
----
+[Watch Demo Video](demo/ai-invoice-automation-demo.mp4.mp4)
 
 ## Installation
 
+Clone repository:
+
 ```bash
-git clone YOUR_REPOSITORY_LINK
+git clone https://github.com/NASRATULLAH786/ai-invoice-automation-system.git
 cd ai-invoice-automation-system
+```
+
+Create virtual environment:
+
+```bash
+python -m venv venv
+```
+
+Activate virtual environment:
+
+```bash
+venv\Scripts\activate
+```
+
+Install dependencies:
+
+```bash
 pip install -r requirements.txt
-python app.py
+```
+
+Run backend:
+
+```bash
+uvicorn app.main:app --reload --port 8080
+```
+
+Open API docs:
+
+```text
+http://127.0.0.1:8080/docs
+```
+
+Open frontend:
+
+```text
+frontend/index.html
+```
+
+## Environment Variables
+
+Create a local `.env` file using `.env.example`.
+
+```env
+GROQ_API_KEY=
+DATABASE_URL=sqlite:///./invoices.db
+MODEL_NAME=llama3-70b-8192
+APP_ENV=development
+```
+
+## Technical Challenges
+
+- Handling unstructured invoice text
+- Connecting frontend with backend APIs
+- Managing invoice database workflows
+- Designing clean operational workflows
+- Error handling and validation
+
+## Future Improvements
+
+- Groq-powered AI extraction
+- PDF invoice upload
+- OCR integration
+- Approval workflows
+- Analytics dashboard
+- CSV export
+- Authentication system
+
+## Project Impact
+
+This project demonstrates practical AI automation engineering skills including:
+- backend API development
+- workflow automation
+- structured data extraction
+- frontend/backend integration
+- database-driven automation systems
