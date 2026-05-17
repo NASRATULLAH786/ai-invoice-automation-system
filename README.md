@@ -1,189 +1,115 @@
-<<<<<<< HEAD
+
+---
+
+# 3. AI INVOICE AUTOMATION SYSTEM README
+
+```md
 # AI Invoice Automation System
 
-A full-stack AI-powered invoice automation platform built using FastAPI, JavaScript, SQLite, and intelligent invoice extraction workflows.
+## Overview
 
-The system allows users to:
-- submit invoice text
-- extract structured invoice data
-- store invoices in a database
-- view saved invoices through a frontend dashboard
+The AI Invoice Automation System is an intelligent document processing and workflow automation platform designed to automate invoice extraction, validation, and operational processing workflows.
+
+The system demonstrates practical implementation of AI-powered automation for business operations.
 
 ---
 
-# Screenshots
+## Problem Statement
 
-## Dashboard
+Manual invoice processing is time-consuming, error-prone, and operationally inefficient.
 
-![Dashboard](screenshots/dashboard.png)
-
-## API Documentation
-
-![Swagger API](screenshots/swagger-api.png)
+Organizations require scalable automation systems to improve invoice processing speed and reduce manual effort.
 
 ---
 
-# Features
+## Solution
 
-## AI Invoice Extraction
-Extracts:
-- Company Name
-- Invoice Number
-- Invoice Date
-- Total Amount
-
-## Backend API
-Built using FastAPI with REST endpoints.
-
-## Database Storage
-Stores invoice records using SQLite and SQLAlchemy.
-
-## Frontend Dashboard
-Simple web dashboard for:
-- invoice submission
-- extraction results
-- viewing saved invoices
-
-## Automation Workflow
-Demonstrates AI automation pipelines and structured data processing.
+The platform automates invoice extraction, validation, processing, and workflow handling using AI-powered operational automation.
 
 ---
 
-# Tech Stack
+## Key Features
+
+- Automated invoice processing
+- AI-powered information extraction
+- Workflow automation
+- Database integration
+- Validation systems
+- Error handling
+- Backend operational workflows
+
+---
+
+## Technologies Used
 
 - Python
-- FastAPI
-- SQLite
-- SQLAlchemy
-- JavaScript
-- HTML/CSS
+- OCR tools (if used)
+- OpenAI API
 - REST APIs
+- PostgreSQL / MongoDB
+- Workflow automation systems
 
 ---
 
-# Project Structure
+## Workflow
 
-```bash
-ai-invoice-automation-system/
-│
-├── app/
-│   ├── main.py
-│   ├── ai_extractor.py
-│   └── database.py
-│
-├── frontend/
-│   ├── index.html
-│   ├── style.css
-│   └── script.js
-│
-├── screenshots/
-│   ├── dashboard.png
-│   └── swagger-api.png
-│
-├── requirements.txt
-└── README.md
-```
+1. Invoice uploaded
+2. System extracts invoice information
+3. AI validates invoice data
+4. Workflow engine processes automation
+5. Information stored in database
+6. Operational actions executed
 
 ---
 
-# API Endpoints
+## Architecture Diagram
 
-## Extract Invoice
+![Architecture](architecture/system-design.png)
 
-```http
-POST /extract-invoice
-```
-
-Extracts structured invoice data.
-
-### Example Request
-
-```json
-{
-  "invoice_text": "Invoice #INV-2026-001 from Madina Tech Solutions dated May 16 2026. Total amount due is $4500."
-}
-```
+Invoice Upload → Extraction Engine → AI Processing → Workflow Validation → Database → Reporting System
 
 ---
 
-## Get Saved Invoices
+## Technical Challenges
 
-```http
-GET /invoices
-```
-
-Returns all stored invoices.
+- Handling multiple invoice formats
+- OCR processing optimization
+- Workflow validation reliability
+- Error handling and retries
+- Database consistency
 
 ---
 
-# Setup Instructions
+## Future Improvements
 
-## Clone Repository
+- ERP integration
+- Fraud detection workflows
+- Analytics dashboard
+- Multi-format support
+- Approval systems
 
-```bash
-git clone https://github.com/NASRATULLAH786/ai-invoice-automation-system.git
-```
+---
 
-## Create Virtual Environment
+## Screenshots
 
-```bash
-python -m venv venv
-```
+![Invoice Upload](screenshots/upload.png)
 
-## Activate Virtual Environment
+![Processing Workflow](screenshots/workflow.png)
 
-### Windows
+![AI Extraction](screenshots/extraction.png)
 
-```bash
-venv\Scripts\activate
-```
+---
 
-### Linux / Mac
+## Demo Video
 
-```bash
-source venv/bin/activate
-```
+[Watch Demo](YOUR_DEMO_LINK)
 
-## Install Dependencies
+---
+
+## Installation
 
 ```bash
+git clone YOUR_REPOSITORY_LINK
+cd ai-invoice-automation-system
 pip install -r requirements.txt
-```
-
-## Run Backend
-
-```bash
-uvicorn app.main:app --reload --port 8080
-```
-
-## Open Frontend
-
-Open:
-
-```text
-frontend/index.html
-```
-
-in your browser.
-
----
-
-# Future Improvements
-
-- PDF upload support
-- OCR extraction
-- Docker deployment
-- Authentication system
-- Cloud deployment
-- AI model integrations
-- Email automation workflows
-- n8n workflow orchestration
-
----
-
-# Author
-
-Nasratullah Mirzai
-=======
-# ai-invoice-automation-system
->>>>>>> 7de37d952a5e02465b0f4187579eef6e46a513f8
+python app.py
